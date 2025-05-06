@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url("./assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf")format("ttf");
+    src: url("./assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf") format("ttf");
+}
+
+/* .app{
+    min-height: 100dvh;
+    width: 100%;
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 27px;
+    overflow: hidden;
+  } */
+
+.light{
+    --background-color: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    color:hsl(227, 75%, 14%)
+}
+.dark{
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+    color: hsl(0, 0%, 93%);
+}
+
+a{
+    background: rgb(236, 92, 39);
+    margin: 0 0 0 10px;
+    padding: 3px 8px;
+    border-radius: 20px;
+   
+}
+@media screen and (min-width:320px) and (max-width:300px) {
+  a{
+    
+  }  
+  .logo{
+    width:140px;
+  }
+  .to_center{
+    justify-content: center;
+  }
+}
+
+
+@theme{
+    --font-notosans: "Noto Sans" "sans-sarif";
+    --color-neutral 900: `hsl(227, 75%, 14%)`;
+    --color-neutral 800: `hsl(226, 25%, 17%)`;
+    --color-neutral 700: `hsl(225, 23%, 24%)`;
+    --color-neutral 600: `hsl(226, 11%, 37%)`;
+    --color-neutral 300: `hsl(0, 0%, 78%)`;
+    --color-neutral 200: `hsl(217, 61%, 90%)`;
+    --color-neutral 100: `hsl(0, 0%, 93%)`;
+    --color-neutral 0: `hsl(200, 60%, 99%)`;
+}
+
+
