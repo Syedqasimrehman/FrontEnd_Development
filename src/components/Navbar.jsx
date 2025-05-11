@@ -4,8 +4,9 @@ import Button from "./Button";
 import moon from "../assets/images/icon-moon.svg";
 import sun from "../assets/images/icon-sun.svg";
 import { useExtensionContext } from "../Context/ExtentionContex";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 const Navbar = () => {
+  const location = useLocation();
   const { toggleSetDark, isDark } = useExtensionContext();
   return (
     <div className={`py-4  justify-items-center `}>
@@ -38,9 +39,36 @@ const Navbar = () => {
         <div className="flex flex-wrap text-center mx-auto justify-center ">
           <nav>
             <ul className="">
-              <Link to="/">All</Link>
-              <Link to="/active">Active</Link>
-              <Link to="/inactive">Inactive</Link>
+             <Link
+                to="/"
+                className={
+                  location.pathname === "/"
+                    ? "bg-[#F94401] text-[#fff]"
+                    : ""
+                }
+              >
+                All
+              </Link>
+              <Link
+                to="/active"
+                className={
+                  location.pathname === "/active"
+                    ? "bg-[#F94401] text-[#fff]"
+                    : " "
+                }
+              >
+                Active
+              </Link>
+              <Link
+                to="/inactive"
+                className={
+                  location.pathname === "/inactive"
+                    ? "bg-[#F94401] text-[#fff]"
+                    : ""
+                }
+              >
+                Inactive
+              </Link>
             </ul>
           </nav>
         </div>
