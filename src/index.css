@@ -27,7 +27,7 @@
 }
 
 a{
-    background: rgb(236, 92, 39);
+    border: 1px solid hwb(60 72% 27% / 0.577);
     margin: 0 0 0 10px;
     padding: 3px 8px;
     border-radius: 20px;
