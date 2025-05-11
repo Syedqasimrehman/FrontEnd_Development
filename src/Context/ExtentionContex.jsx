@@ -9,45 +9,34 @@ export const ExtensionContext = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
   const [filterData, setfilterData] = useState(cards);
   const [cardData, setcardData] = useState(cards);
-  const [navActive, setnavActive] = useState("all");
 
   const toggleSetDark = () => {
     setIsDark(!isDark);
   };
 
   const toggleClickAll = () => {
-    setnavActive("all");
     setfilterData(cards);
   };
 
   const toggleActive = () => {
-    setfilterData(
-      cardData.filter((item) => {
-        item.isActive === true;
-      })
-    );
+    setfilterData(cardData.filter((item) => item.isActive === true));
   };
   const toggleInActive = () => {
-    setfilterData(
-      cardData.filter((item) => {
-        item.isActive === false;
-      })
-    );
+    setfilterData(cardData.filter((item) => item.isActive === false));
   };
 
   const setActiveState = (id) => {
-    const updateData = cardData.map((index) =>
-      index.id === id ? { ...index, isActive: !index.isActive } : index
+    const updateData = cardData.map((item) =>
+      item.id === id ? { ...item, isActive: !item.isActive } : item
     );
     setcardData(updateData);
-    setfilterData(
-      filterData.map((item) =>
-        item.id === id ? { ...item, isActive: !item.isActive } : item
-      )
-    );
+   
   };
+
   const removeItems = (id) => {
-    setcardData(cards.filter((item) => item.id !== id));
+    const updateCard = cardData.filter((item) => item.id !== id);
+    setcardData(updateCard);
+    setfilterData(updateCard);
   };
   const defaultData = {
     isDark,
@@ -58,8 +47,8 @@ export const ExtensionContext = ({ children }) => {
     removeItems,
     cardData,
     filterData,
-    navActive,
     toggleClickAll,
+    setfilterData,
   };
 
   return (

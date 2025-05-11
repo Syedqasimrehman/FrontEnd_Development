@@ -34,8 +34,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className=" flex flex-wrap w-[85%] py-2 mt-[1rem] gap-3 to_center ">
-        <h3 className="text-[19px] font-medium">Extension list</h3>
-        <div className="flex flex-wrap text-center justify-center ">
+        <h3 className="text-[19px] text-center mx-auto font-medium">Extension list</h3>
+        <div className="flex flex-wrap text-center mx-auto justify-center ">
           <nav>
             <ul className="">
               <Link to="/">All</Link>

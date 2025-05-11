@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Cards from "./components/Cards";
 import Active from "./components/Active";
@@ -6,7 +6,24 @@ import Inactive from "./components/Inactive";
 import { useExtensionContext } from "./Context/ExtentionContex";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 const App = () => {
-  const { isDark, toggleInActive, toggleActive } = useExtensionContext();
+  const {
+    isDark,
+    // toggleInActive,
+    // toggleActive,
+    // toggleSetDark,
+    // setActiveState,
+    // removeItems,
+    // filterData,
+    // toggleClickAll,
+    cardData,
+    // navActive,
+    // setfilterData,
+  } = useExtensionContext();
+
+  useEffect(() => {
+   
+  }, [cardData]);
+
   return (
     <div
       className={`overflow-x-hidden py-[1rem] px-[1.5rem] mx-auto w-full h-[100dvh] ${
@@ -16,9 +33,9 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route element={<Cards />} />
-          <Route element={<Active />} />
-          <Route element={<Inactive />} />
+          <Route path="/" element={<Cards />} />
+          <Route path="/active" element={<Active />} />
+          <Route path="/inactive" element={<Inactive />} />
         </Routes>
       </Router>
     </div>
